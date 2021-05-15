@@ -13,7 +13,7 @@ class App extends Component {
         <header className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
           <h1> {this.state.string}</h1>
-          <button onClick={() => this.setState({ string: Hello Andrei})}>Change Text</button>
+          <button onClick={() => this.setState({ string: 'Hello Andrei'})}>Change Text</button>
         </header>
         </div>
     )
