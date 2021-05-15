@@ -4,7 +4,17 @@ import './App.css';
 
 class App extends Component {
   state = {
-    string: 'Hello Chay!'
+    monster: [
+      {
+        name: 'Frankenstein'
+      },
+      {
+        name: 'Dracular'
+      },
+      {
+        name: 'Zombie'
+      },
+    ]
   }
 
   render() {
