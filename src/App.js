@@ -4,27 +4,28 @@ import './App.css';
 
 class App extends Component {
   state = {
-    monster: [
+    monsters: [
       {
-        name: 'Frankenstein'
+        name: 'Frankenstein',
+        id: 'asc1'
       },
       {
-        name: 'Dracular'
+        name: 'Dracular',
+        id: 'asr2'
       },
       {
-        name: 'Zombie'
+        name: 'Zombie',
+        id: 'as1w'
       },
     ]
   }
 
   render() {
     return (
-      <div className='app'>
-        <header className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <h1> {this.state.string}</h1>
-          <button onClick={() => this.setState({ string: 'Hello Andrei'})}>Change Text</button> {/* change state */}
-        </header>
+      <div className='App'>
+        {
+          this.state.monsters.map(monster => <h1 key={monster.id}>{ monster.name}</h1>)
+        }
         </div>
     )
   }
