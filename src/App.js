@@ -3,26 +3,14 @@ import './App.css';
 
 class App extends Component {
   state = {
-    monsters: [
-      {
-        name: 'Frankenstein',
-        id: 'asc1'
-      },
-      {
-        name: 'Dracular',
-        id: 'asr2'
-      },
-      {
-        name: 'Zombie',
-        id: 'as1w'
-      },
-    ]
+    monsters: []
   }
 
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
-    .then(users => console.log(users))
+      .then(users => this.setState({ monster: users }))
+    // .then(users => console.log(users))
   }
   render() {
     return (
