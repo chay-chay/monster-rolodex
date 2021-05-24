@@ -15,6 +15,12 @@ class App extends Component {
   }
 
   render() {
+    const { monster, searchField } = this.state;
+    // destructuring
+    // const monsters = this.state.monsters;
+    // const searchField = this.state.searchField
+    const filteredMonsters = monster.filter(monster =>
+      monster.name.toLowerCase().includes(searchField.toLowerCase()))
     return (
       <div className="App">
         <input
@@ -25,7 +31,7 @@ class App extends Component {
             // if we want to see state update immediately, we have to use callback function
           }}
         />
-        <CardList monsters={this.state.monsters} />
+        <CardList monsters={filteredMonsters} />
       </div>
     );
   }
