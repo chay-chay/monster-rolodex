@@ -21,8 +21,10 @@ class App extends Component {
           type="search"
           placeholder="Search Monsters"
           onChange={(e) => {
-            this.setState({ searchField: e.target.value });
-            console.log(this.state);
+            this.setState({ searchField: e.target.value }, () =>
+              console.log(this.state)
+            );
+
             // if we want to see state update immediately, we have to use callback function
           }}
         />
