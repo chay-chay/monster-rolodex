@@ -32,6 +32,7 @@ class App extends Component {
           }}
         />
         <CardList monsters={filteredMonsters} />
+        {/* Added filter function to search bar */}
       </div>
     );
   }
