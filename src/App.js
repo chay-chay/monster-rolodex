@@ -16,26 +16,27 @@ class App extends Component {
   }
 
   render() {
-    const { monster, searchField } = this.state;
     // destructuring
     // const monsters = this.state.monsters;
     // const searchField = this.state.searchField
-    const filteredMonsters = monster.filter(monster =>
-      monster.name.toLowerCase().includes(searchField.toLowerCase()))
+    const { monsters, searchField } = this.state;
+    const filteredMonsters = monsters.filter(monster =>
+      monster.name.toLowerCase().includes(searchField.toLowerCase())
+    );
     return (
       <div className="App">
-       {/* <input
+       <input
           type="search"
           placeholder="Search Monsters"
           onChange={(e) => {
             this.setState({ searchField: e.target.value });
             // if we want to see state update immediately, we have to use callback function
           }}
-        /> */} 
-        <SearchBox placeholder="Search Monsters" handleChange={ e => {
+        /> 
+         <SearchBox placeholder="Search Monsters" handleChange={ e => {
           this.setState({ searchField: e.target.value })
           // if we want to see state update immediately, we have to use callback function
-        }} />
+        }} /> 
         <CardList monsters={filteredMonsters} />
         {/* Added filter function to search bar */}
       </div>
