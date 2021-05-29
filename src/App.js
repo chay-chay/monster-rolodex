@@ -3,10 +3,15 @@ import "./App.css";
 import { CardList } from "./components/card-list/card-list.component";
 import { SearchBox } from './components/search-box/search-box.component'
 class App extends Component {
-  state = {
-    monsters: [],
-    searchField: "",
-  };
+  constructor() {
+    super();
+
+    this.state = {
+      monsters: [],
+      searchField: "",
+    };
+  }
+ 
 
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -15,6 +20,9 @@ class App extends Component {
     // .then(users => console.log(users))
   }
 
+  handleChange = (e) => {
+    this.setState({ searchField: e.target.value })
+  }
   render() {
 
     // destructuring
@@ -34,10 +42,9 @@ class App extends Component {
             // if we want to see state update immediately, we have to use callback function
           }}
         /> 
-         <SearchBox placeholder="Search Monsters" handleChange={ e => {
-          this.setState({ searchField: e.target.value })
+         <SearchBox placeholder="Search Monsters" handleChange={ this.handleChange } 
           // if we want to see state update immediately, we have to use callback function
-        }} /> 
+       /> 
         <CardList monsters={filteredMonsters} />
         {/* Added filter function to search bar */}
       </div>
