@@ -20,9 +20,10 @@ class App extends Component {
     // .then(users => console.log(users))
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({ searchField: e.target.value })
   }
+
   render() {
 
     // destructuring
@@ -34,14 +35,15 @@ class App extends Component {
     );
     return (
       <div className="App">
-       <input
+    {/* <input
           type="search"
           placeholder="Search Monsters"
           onChange={(e) => {
             this.setState({ searchField: e.target.value });
             // if we want to see state update immediately, we have to use callback function
           }}
-        /> 
+        /> */}
+        <h1> Monsters Rolodex </h1>
          <SearchBox placeholder="Search Monsters" handleChange={ this.handleChange } 
           // if we want to see state update immediately, we have to use callback function
        /> 
